@@ -1,9 +1,6 @@
 package Ejercicio1;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.AbstractSet;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -12,15 +9,15 @@ import java.util.Set;
 public class PersonaDao {
 
     private Connection obtenerConexion() {
-        // Utilice aquí su motor de BD preferido
-        // Ejemplo:
-        // return DriverManager.getConnection(
-        //     "jdbc:mysql://localhost:3306/tu_bd",
-        //     "root",
-        //     ""
-        // );
-
-        throw new RuntimeException("Implementar conexión");
+        try {
+            return DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/proxy_personas",
+                    "root",
+                    ""
+            );
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public Persona personaPorId(int id) {
