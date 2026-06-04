@@ -1,4 +1,7 @@
 package ejercicio2;
 
-public class Archivo {
+import java.io.IOException;
+
+public interface Archivo {
+    String readFile() throws IOException;
 }

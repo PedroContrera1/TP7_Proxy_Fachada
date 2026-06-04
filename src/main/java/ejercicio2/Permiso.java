@@ -1,4 +1,7 @@
 package ejercicio2;
 
-public class Permiso {
+public enum Permiso {
+    ADMIN,
+    BASICO,
+    INTERMEDIO
 }
